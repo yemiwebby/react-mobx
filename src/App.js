@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { decorate, observable, action, computed } from "mobx";
-// import { observer } from "mobx-react";
 import Form from './components/Form';
 import Dashboard from './components/Dashboard';
 import Reviews from './components/Reviews';
