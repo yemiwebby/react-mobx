@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
+import { observer } from "mobx-react"
 
-export default class Reviews extends Component {
+const List = (props) => {
+    return (
+        <li className="list-group-item">
+            <p className="float-left">{props.data.review}</p>
+            <p className="float-right">
+                {props.data.stars}
+                <span className="fa fa-star"></span>
+            </p>
+        </li>
+    )
+}
+
+class Reviews extends Component {
     render() {
         const { store } = this.props
         return (
@@ -13,13 +26,10 @@ export default class Reviews extends Component {
                         </div>
                             <ul className="list-group list-group-flush">
                                 {store.reviewList.map((e, i) =>
-                                    <li className="list-group-item">
-                                        <p className="float-left">{i}</p>
-                                        <p className="float-right">
-                                            <span className="fa fa-star">{i}</span>
-                                        </p>
-                                    </li>
-
+                                    <List
+                                        key={i}
+                                        data={e}
+                                    />
                                 )}
                             </ul>
                         </div>
@@ -29,3 +39,7 @@ export default class Reviews extends Component {
         )
     }
 }
+
+Reviews = observer(Reviews);
+
+export default Reviews;

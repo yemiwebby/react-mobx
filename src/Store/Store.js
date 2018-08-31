@@ -2,7 +2,7 @@
 class Store {
     reviewList = [
         { review: "This is a nice article", stars: 2 },
-        { review: "This is a nice article", stars: 2 },
+        { review: "This is a nice article", stars: 4 },
     ]
 
     clearReviews() {
@@ -10,17 +10,18 @@ class Store {
     }
 
     addReview(e) {
-        this.reviewList.push(e)
+        this.reviewList.push(e);
     }
 
-    get totalReviewCount() {
-        let sum = 0
-        this.reviewList.map(e => sum + e.review)
-        return sum;
+    get reviewCount() {
+        let count = this.reviewList.length;
+        return count;
     }
 
     get averageScore() {
         let avr = 0
+        this.reviewList.map(e => avr = avr + e.stars)
+        return avr / this.reviewList.length
     }
 }
 

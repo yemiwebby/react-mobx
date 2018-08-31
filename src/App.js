@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import { decorate, observable, configure, action, computed } from "mobx";
-import { observer } from "mobx-react";
+import { decorate, observable, action, computed } from "mobx";
+// import { observer } from "mobx-react";
 import Form from './components/Form';
 import Dashboard from './components/Dashboard';
 import Reviews from './components/Reviews';
@@ -11,8 +11,8 @@ decorate(Store, {
   reviewList: observable,
   clearReviews: action,
   addReview: action,
-  totalReviewCount: computed,
-  averageScore: computed
+  averageScore: computed,
+  reviewCount: computed
 })
 
 const reviewStore = new Store()

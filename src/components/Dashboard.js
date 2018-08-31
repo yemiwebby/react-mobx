@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { observer } from "mobx-react"
 
-export default class Dashboard extends Component {
+
+class Dashboard extends Component {
     render() {
+        const { store } = this.props
         return (
             <div className="dashboardSection">
                 <div className="row">
@@ -14,7 +17,7 @@ export default class Dashboard extends Component {
 
                                     </div>
                                     <div className="col-md-6 text-right">
-                                        <p id="reviewCount">3</p>
+                                        <p id="reviewCount">{store.reviewCount}</p>
                                         <p className="announcement-text">Reviews</p>
                                     </div>
                                 </div>
@@ -31,7 +34,7 @@ export default class Dashboard extends Component {
 
                                     </div>
                                     <div className="col-md-6 text-right">
-                                        <p id="averageScores">2</p>
+                                        <p id="averageScores">{store.averageScore}</p>
                                         <p className="announcement-text"> Average Scores </p>
                                     </div>
                                 </div>
@@ -43,3 +46,6 @@ export default class Dashboard extends Component {
         )
     }
 }
+
+Dashboard = observer(Dashboard);
+export default Dashboard;
