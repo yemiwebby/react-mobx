@@ -5,10 +5,10 @@ import StarRatingComponent from 'react-star-rating-component';
 const List = (props) => {
     return (
         <li className="list-group-item">
-            <p className="float-left">{props.data.review}</p>
-            <p className="float-right">
-            <StarRatingComponent starCount={props.data.stars}/>
-            </p>
+            <div className="float-left">{props.data.review}</div>
+            <div className="float-right">
+                <StarRatingComponent name="reviewRate" starCount={props.data.stars} />
+            </div>
         </li>
     )
 }
