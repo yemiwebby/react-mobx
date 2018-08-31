@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { observer } from "mobx-react"
+import { observer } from "mobx-react";
+import StarRatingComponent from 'react-star-rating-component';
 
 const List = (props) => {
     return (
         <li className="list-group-item">
             <p className="float-left">{props.data.review}</p>
             <p className="float-right">
-                {props.data.stars}
-                <span className="fa fa-star"></span>
+            <StarRatingComponent starCount={props.data.stars}/>
             </p>
         </li>
     )

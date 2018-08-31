@@ -2,7 +2,7 @@
 class Store {
     reviewList = [
         { review: "This is a nice article", stars: 2 },
-        { review: "This is a nice article", stars: 4 },
+        { review: "A lovely review", stars: 4 },
     ]
 
     clearReviews() {
