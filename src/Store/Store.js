@@ -5,10 +5,6 @@ class Store {
         { review: "A lovely review", stars: 4 },
     ]
 
-    clearReviews() {
-        this.reviewList = []
-    }
-
     addReview(e) {
         this.reviewList.push(e);
     }
