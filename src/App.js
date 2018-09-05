@@ -8,7 +8,6 @@ import Store from './Store/Store';
 
 decorate(Store, {
   reviewList: observable,
-  clearReviews: action,
   addReview: action,
   averageScore: computed,
   reviewCount: computed
